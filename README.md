@@ -1,4 +1,4 @@
-# PrayTime
+# PrayerTime
 
 <p align="center">
   <img height="200" src="web/logo.png" />
