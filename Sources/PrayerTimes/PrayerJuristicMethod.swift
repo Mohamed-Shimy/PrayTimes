@@ -1,5 +1,5 @@
 //
-//  PrayingJuristicMethod.swift
+//  PrayerJuristicMethod.swift
 //  iPray
 //
 //  Created by Mohamed Shemy on Sat 16 Apr, 2022.
@@ -11,7 +11,7 @@ import Foundation
 ///
 /// Juristic Method
 ///
-public enum PrayingJuristicMethod: Int {
+public enum PrayerJuristicMethod: Int {
     
     ///
     /// Shafii (standard)

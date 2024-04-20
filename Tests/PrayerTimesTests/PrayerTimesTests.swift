@@ -1,7 +1,7 @@
 import XCTest
-@testable import PrayTimes
+@testable import PrayerTimes
 
-final class PrayTimesTests: XCTestCase {
+final class PrayerTimesTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

@@ -4,22 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "PrayTimes",
+    name: "PrayerTimes",
     defaultLocalization: "ar",
     platforms: [.iOS(.v14), .macOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "PrayTimes",
-            targets: ["PrayTimes"]),
+            name: "PrayerTimes",
+            targets: ["PrayerTimes"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "PrayTimes"),
+            name: "PrayerTimes"),
         .testTarget(
-            name: "PrayTimesTests",
-            dependencies: ["PrayTimes"]),
+            name: "PrayerTimesTests",
+            dependencies: ["PrayerTimes"]),
     ]
 )

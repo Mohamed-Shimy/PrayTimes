@@ -8,27 +8,27 @@
 
 import Foundation
 
-open class PrayingTimesConfigurations: PrayingTimesConfigurable {
+open class PrayerTimesConfigurations: PrayerTimesConfigurable {
     
     open var timeZone: Double
-    open var location: PrayingTimeLocationCoordinate
-    open var calcMethod: PrayingTimeCalculationMethod
-    open var adjustHighLats: PrayingAdjustingMethod
-    open var timeFormat: PrayingTimeStyle
+    open var location: PrayerTimeLocationCoordinate
+    open var calcMethod: PrayerTimeCalculationMethod
+    open var adjustHighLats: PrayerAdjustingMethod
+    open var timeFormat: PrayerTimeStyle
     open var customParams: [Double]? = nil
     open var dhuhrMinutes: Double = 0.0
-    open var juristic: PrayingJuristicMethod
+    open var juristic: PrayerJuristicMethod
     open var daylightSavingsHours: Double
     
     public init(
         timeZone: Double,
-        location: PrayingTimeLocationCoordinate,
-        calcMethod: PrayingTimeCalculationMethod,
-        adjustHighLats: PrayingAdjustingMethod,
-        timeFormat: PrayingTimeStyle,
+        location: PrayerTimeLocationCoordinate,
+        calcMethod: PrayerTimeCalculationMethod,
+        adjustHighLats: PrayerAdjustingMethod,
+        timeFormat: PrayerTimeStyle,
         customParams: [Double]? = nil,
         dhuhrMinutes: Double = 0.0,
-        juristic: PrayingJuristicMethod,
+        juristic: PrayerJuristicMethod,
         daylightSavingsHours: Double
     ) {
         self.timeZone = timeZone

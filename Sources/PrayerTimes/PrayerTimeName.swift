@@ -1,5 +1,5 @@
 //
-//  PrayingTimeName.swift
+//  PrayerTimeName.swift
 //
 //
 //  Created by Mohamed Shemy on 09/03/2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum PrayingTimeName: Int, CaseIterable {
+public enum PrayerTimeName: Int, CaseIterable {
     
     case fajr
     case sunrise
@@ -17,14 +17,14 @@ public enum PrayingTimeName: Int, CaseIterable {
     case isha
 }
 
-extension PrayingTimeName: Comparable {
+extension PrayerTimeName: Comparable {
     
-    public static func < (lhs: PrayingTimeName, rhs: PrayingTimeName) -> Bool {
+    public static func < (lhs: PrayerTimeName, rhs: PrayerTimeName) -> Bool {
         lhs.rawValue < rhs.rawValue
     }
 }
 
-extension PrayingTimeName {
+extension PrayerTimeName {
     
     public subscript(index: Int) -> Self {
         Self.allCases[index]

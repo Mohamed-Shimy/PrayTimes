@@ -1,5 +1,5 @@
 //
-//  PrayingAdjustingMethod.swift
+//  PrayerAdjustingMethod.swift
 //  iPray
 //
 //  Created by Mohamed Shemy on Sat 16 Apr, 2022.
@@ -11,7 +11,7 @@ import Foundation
 ///
 /// Adjusting Method for Higher Latitudes
 ///
-public enum PrayingAdjustingMethod: Int {
+public enum PrayerAdjustingMethod: Int {
     
     ///
     /// No adjustment

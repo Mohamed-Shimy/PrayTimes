@@ -1,5 +1,5 @@
 //
-//  PrayingTime.swift
+//  PrayerTime.swift
 //  PrayTimes
 //
 //  Created by Mohamed Shemy on 23 Oct, 2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// PrayingTime
+/// PrayerTime
 ///
 /// Daily prayer (salah) times, fixed by Qur'an and Hadith,
 /// are bound to the apparent motion of the Sun on the sky.
@@ -81,9 +81,9 @@ import Foundation
 ///
 /// [spec]:http://praytimes.org/code/git/?a=tree&p=PrayTimes&hb=HEAD&f=v1/objc
 ///
-public struct PrayingTime: CustomStringConvertible {
+public struct PrayerTime: CustomStringConvertible {
     
-    public typealias Location = PrayingTimeLocationCoordinate
+    public typealias Location = PrayerTimeLocationCoordinate
     
     enum Index: Int {
         case fajr = 0
@@ -100,7 +100,7 @@ public struct PrayingTime: CustomStringConvertible {
     ///
     /// Juristic method for Asr
     ///
-    private var asrJuristic: PrayingJuristicMethod
+    private var asrJuristic: PrayerJuristicMethod
     
     ///
     /// Minutes after mid-day for Dhuhr
@@ -110,17 +110,17 @@ public struct PrayingTime: CustomStringConvertible {
     ///
     /// Calculation Method
     ///
-    private var calcMethod: PrayingTimeCalculationMethod
+    private var calcMethod: PrayerTimeCalculationMethod
     
     ///
     /// Adjusting method for higher latitudes
     ///
-    private var adjustHighLats: PrayingAdjustingMethod
+    private var adjustHighLats: PrayerAdjustingMethod
     
     ///
     /// Time Format
     ///
-    private var timeFormat: PrayingTimeStyle
+    private var timeFormat: PrayerTimeStyle
     
     ///
     /// Time Zone
@@ -148,7 +148,7 @@ public struct PrayingTime: CustomStringConvertible {
     ///  `methodParams`is a dictionary of `CalculationMethod` as a key
     ///   and array of `Double`  as a value
     ///
-    private var methodParams: [PrayingTimeCalculationMethod : [Double]]
+    private var methodParams: [PrayerTimeCalculationMethod : [Double]]
     
     ///
     /// Tuning offsets
@@ -198,10 +198,10 @@ public struct PrayingTime: CustomStringConvertible {
     
     // MARK: - Init
     
-    /// PrayingTime
+    /// PrayerTime
     ///
     /// - Parameters:
-    ///   - date: The value of PrayingDate with `day`, `month` and `year`.
+    ///   - date: The value of PrayerDate with `day`, `month` and `year`.
     ///   - location: The value of  Location with `latitude` and  `longitude`.
     ///   - timeZone: The time zone value for the location.
     ///   - calcMethod: The method for times calculations, default `egypt`.
@@ -215,11 +215,11 @@ public struct PrayingTime: CustomStringConvertible {
         date: Date,
         location: Location,
         timeZone: Double,
-        calcMethod: PrayingTimeCalculationMethod,
-        adjustHighLats: PrayingAdjustingMethod,
-        timeFormat: PrayingTimeStyle = .time12,
+        calcMethod: PrayerTimeCalculationMethod,
+        adjustHighLats: PrayerAdjustingMethod,
+        timeFormat: PrayerTimeStyle = .time12,
         customParams: [Double]? = nil,
-        asrJuristic: PrayingJuristicMethod,
+        asrJuristic: PrayerJuristicMethod,
         dhuhrMinutes: Double = 0.0
     ) {
         self.date = date
@@ -233,7 +233,7 @@ public struct PrayingTime: CustomStringConvertible {
         
         //Tuning offsets
         offsets = [0, 0, 0, 0, 0, 0, 0]
-        methodParams = PrayingTimeCalculationMethod.allCases.reduce([:]) { result, method in
+        methodParams = PrayerTimeCalculationMethod.allCases.reduce([:]) { result, method in
             var result = result
             result[method] = method.values
             return result
@@ -247,13 +247,13 @@ public struct PrayingTime: CustomStringConvertible {
         }
     }
     
-    /// PrayingTime
+    /// PrayerTime
     ///
     /// - Parameters:
-    ///   - configurations: the praying time configurations.
-    ///   - date: The value of PrayingDate with `day`, `month` and `year`.
+    ///   - configurations: the Prayer time configurations.
+    ///   - date: The value of PrayerDate with `day`, `month` and `year`.
     ///
-    public init(configurations: PrayingTimesConfigurable, date: Date) {
+    public init(configurations: PrayerTimesConfigurable, date: Date) {
         self.init(
             date: date,
             location: configurations.location,
@@ -409,7 +409,7 @@ public struct PrayingTime: CustomStringConvertible {
 }
 
 // MARK: - Sun Position Calculations -
-extension PrayingTime {
+extension PrayerTime {
     
     /// Compute declination angle of sun and equation of time
     ///
@@ -502,7 +502,7 @@ extension PrayingTime {
 }
 
 // MARK: - Julian Date -
-extension PrayingTime {
+extension PrayerTime {
     
     /// Calculate julian date from a pray date
     ///
@@ -546,7 +546,7 @@ extension PrayingTime {
 }
 
 // MARK: - Compute Prayer Times -
-extension PrayingTime {
+extension PrayerTime {
     
     /// Compute prayer times at given julian date
     ///
@@ -725,7 +725,7 @@ extension PrayingTime {
 }
 
 // MARK: - Trigonometric Functions -
-extension PrayingTime {
+extension PrayerTime {
     
     ///
     /// Range reduce angle in degrees.
@@ -825,7 +825,7 @@ extension PrayingTime {
 
 fileprivate extension Array where Element == Double {
     
-    subscript(_ index: PrayingTime.Index) -> Double {
+    subscript(_ index: PrayerTime.Index) -> Double {
         get { self[index.rawValue] }
         set { self[index.rawValue] = newValue }
     }

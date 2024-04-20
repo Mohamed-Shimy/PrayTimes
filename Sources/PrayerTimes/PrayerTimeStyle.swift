@@ -1,5 +1,5 @@
 //
-//  PrayingTimeStyle.swift
+//  PrayerTimeStyle.swift
 //  iPray
 //
 //  Created by Mohamed Shemy on Sat 16 Apr, 2022.
@@ -11,7 +11,7 @@ import Foundation
 ///
 /// Time Format
 ///
-public enum PrayingTimeStyle: Int {
+public enum PrayerTimeStyle: Int {
     
     /// 24-hour format
     ///

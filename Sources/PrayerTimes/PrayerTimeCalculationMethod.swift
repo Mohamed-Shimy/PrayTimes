@@ -1,5 +1,5 @@
 //
-//  PrayingTimeCalculationMethod.swift
+//  PrayerTimeCalculationMethod.swift
 //  iPray
 //
 //  Created by Mohamed Shemy on Sat 16 Apr, 2022.
@@ -11,7 +11,7 @@ import Foundation
 ///
 /// Calculation Method
 ///
-public enum PrayingTimeCalculationMethod: Int {
+public enum PrayerTimeCalculationMethod: Int {
     
     ///
     /// University of Islamic Sciences, Karachi
@@ -49,7 +49,7 @@ public enum PrayingTimeCalculationMethod: Int {
     case custom = 0
 }
 
-extension PrayingTimeCalculationMethod {
+extension PrayerTimeCalculationMethod {
     
     public var values: [Double] {
         switch self {
@@ -64,9 +64,9 @@ extension PrayingTimeCalculationMethod {
     }
 }
 
-extension PrayingTimeCalculationMethod: CaseIterable {
+extension PrayerTimeCalculationMethod: CaseIterable {
     
-    static var allMethod: [PrayingTimeCalculationMethod] {
+    static var allMethod: [PrayerTimeCalculationMethod] {
         var all = allCases
         all.removeAll { $0 == .custom }
         return all
